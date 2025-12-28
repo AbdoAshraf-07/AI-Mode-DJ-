@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mood DJ</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="style.css") }}">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Mood <span class="highlight">DJ</span></h1>
+            <p class="subtitle">اكتشف مودك فوراً واسمع موسيقتك المفضلة</p>
+        </header>
+
+        <main class="content-grid">
+            <div class="video-section">
+                <div class="video-wrapper">
+                    <img src="{{ url_for("video_feed") }}" id="camera-stream" alt="Live Stream">
+                </div>
+            </div>
+
+            <div class="control-section">
+                <div class="status-box">
+                    <h3>المود الحالي:</h3>
+                    <div id="mood-text">في انتظار الكاميرا...</div>
+                    <div class="confidence">دقة التحليل: <span id="confidence-value">0</span>%</div>
+                </div>
+
+r<button id="generate-btn">اقتراح موسيقى تناسب حالتي 🎵</button>
+
+                <div id="result-box" class="hidden">
+                    <p>أغاني مختارة لـ مود <strong id="target-mood"></strong>:</p>
+                    <a href="#" id="youtube-link" target="_blank">فتح البلاي ليست الآن</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for("static", filename="script.js") }}"></script>
+</body>
+</html>
